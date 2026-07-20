@@ -36,3 +36,23 @@ export {
   QrTokenMismatchError,
   QrGenerationNotAvailableError,
 } from './attendance.errors';
+export {
+  CertificateNotFoundError,
+  CertificateAlreadyIssuedError,
+  CertificateRevokedError,
+  NotEligibleForCertificateError,
+  CertificateEventNotEligibleError,
+} from './certificate.errors';
+export {
+  BudgetNotFoundError,
+  ExpenseNotFoundError,
+  BudgetClosedError,
+  BudgetOverAllocationError,
+  ExpenseInvalidStatusError,
+  BudgetAccessDeniedError,
+} from './budget.errors';
+export {
+  NotificationNotFoundError,
+  NotificationAccessDeniedError,
+} from './notification.errors';
+export { AnalyticsAccessDeniedError } from './analytics.errors';
