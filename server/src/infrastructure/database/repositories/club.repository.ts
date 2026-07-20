@@ -185,6 +185,19 @@ export class MongoClubRepository implements IClubRepository {
       isDeleted: false,
     });
   }
+
+  async listByFacultyAdvisor(collegeId: string, facultyId: string): Promise<ClubSummary[]> {
+    const docs = await ClubModel.find({
+      collegeId,
+      facultyAdvisorId: facultyId,
+      isDeleted: false,
+      status: ClubStatus.ACTIVE,
+    })
+      .sort({ name: 1 })
+      .lean();
+
+    return docs.map((doc) => toClubSummary(doc as ClubDocument));
+  }
 }
 
 export const clubRepository = new MongoClubRepository();

@@ -54,5 +54,6 @@ export interface IClubRepository {
   update(collegeId: string, clubId: string, data: UpdateClubData): Promise<Club>;
   archive(collegeId: string, clubId: string, updatedBy: string): Promise<Club>;
   list(filter: ListClubsFilter): Promise<PaginatedClubs>;
+  listByFacultyAdvisor(collegeId: string, facultyId: string): Promise<ClubSummary[]>;
   countActiveByCollege(collegeId: string): Promise<number>;
 }

@@ -8,6 +8,7 @@ import myRegistrationsRoutes from './my-registrations.routes';
 import attendanceRoutes from './attendance.routes';
 import certificateRoutes from './certificate.routes';
 import myCertificatesRoutes from './my-certificates.routes';
+import myClubsRoutes from './my-clubs.routes';
 import certificateVerifyRoutes from './certificate-verify.routes';
 import budgetRoutes from './budget.routes';
 import myNotificationsRoutes from './my-notifications.routes';
@@ -36,5 +37,6 @@ apiV1Router.use('/colleges/:collegeSlug/events', eventRoutes);
 apiV1Router.use('/colleges/:collegeSlug/users/me', myNotificationsRoutes);
 apiV1Router.use('/colleges/:collegeSlug/users/me', myRegistrationsRoutes);
 apiV1Router.use('/colleges/:collegeSlug/users/me', myCertificatesRoutes);
+apiV1Router.use('/colleges/:collegeSlug/users/me', myClubsRoutes);
 
 export default apiV1Router;
