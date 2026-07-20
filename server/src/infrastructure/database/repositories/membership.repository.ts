@@ -33,6 +33,15 @@ export class MongoMembershipRepository implements IMembershipRepository {
     });
     return doc ? (doc.role as MembershipRole) : null;
   }
+
+  async hasActiveMembership(clubId: string, userId: string): Promise<boolean> {
+    const doc = await MembershipModel.findOne({
+      clubId,
+      userId,
+      status: MembershipStatus.ACTIVE,
+    });
+    return doc !== null;
+  }
 }
 
 export const membershipRepository = new MongoMembershipRepository();

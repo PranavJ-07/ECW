@@ -29,6 +29,9 @@ const envSchema = z.object({
 
   CLIENT_URL: z.string().url().default('http://localhost:5173'),
 
+  ATTENDANCE_QR_SECRET: z.string().min(32).optional(),
+  ATTENDANCE_QR_TTL_MINUTES: z.coerce.number().int().positive().default(10),
+
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace']).default('info'),
 });
 
