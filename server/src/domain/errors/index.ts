@@ -6,3 +6,9 @@ export {
   AccountDeactivatedError,
   DomainNotAllowedError,
 } from './auth.errors';
+export {
+  ClubNotFoundError,
+  ClubSlugExistsError,
+  ClubArchivedError,
+  TenantMismatchError,
+} from './club.errors';
